@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import css from './Modal.module.css';
 
-export const Modal = ({ imageUrl, closeModal }) => {
+export const Modal = ({ imageUrl, onCloseModal }) => {
   const handleClose = event => {
     if (event.target.className === `${css.overlay}`) {
-      closeModal();
+      onCloseModal();
     }
   };
 
@@ -19,5 +19,5 @@ export const Modal = ({ imageUrl, closeModal }) => {
 
 Modal.propTypes = {
   imageUrl: PropTypes.string.isRequired,
-  closeModal: PropTypes.func.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
 };
